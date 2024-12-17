@@ -1,0 +1,249 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Game Container */
+#game-container {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    max-width: 750px;
+    width: 90%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FF6B6B;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h1::before, h1::after {
+    content: "•";
+    font-size: 30px;
+    color: #FFA07A;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#start-game, #restart-game {
+    background: linear-gradient(135deg, #FF6B6B, #FFA07A);
+    color: white;
+}
+
+#next-btn {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A);
+    color: white;
+}
+
+#next-btn:hover {
+    background: linear-gradient(135deg, #43A047, #66BB6A);
+}
+
+/* Options Buttons */
+#options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#options button {
+    flex: 1 1 calc(45% - 10px);
+    padding: 15px;
+    font-size: 1rem;
+    color: #555555;
+    background: #F9FAFB;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#options button:hover {
+    background: #EFEFEF;
+    transform: scale(1.03);
+}
+
+#options button.correct {
+    background: #C8E6C9;
+    color: #1B5E20;
+    font-weight: bold;
+    border-color: #81C784;
+}
+
+#options button.incorrect {
+    background: #FFCDD2;
+    color: #C62828;
+    font-weight: bold;
+    border-color: #EF9A9A;
+}
+
+/* Progress Bar */
+progress {
+    width: 100%;
+    height: 12px;
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(to right, #FF6B6B, #FF9472);
+    transition: width 0.5s ease-in-out;
+}
+
+progress::-webkit-progress-bar {
+    background: #E0E7EF;
+}
+
+/* Fact Section */
+#fact {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #FF6B6B;
+    background: #FFF5F5;
+    border: 1px solid #FFD1D1;
+    border-radius: 8px;
+    display: none;
+}
+
+/* Info Section */
+#info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+#info p {
+    font-size: 14px;
+    color: #555555;
+}
+
+#info span {
+    font-weight: bold;
+    color: #333333;
+}
+
+/* End Section */
+#end-section h2 {
+    color: #4CAF50;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#end-section p {
+    font-size: 18px;
+    color: #555555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    #game-container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    #options button {
+        flex: 1 1 100%;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    progress {
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #game-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    #options button {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    progress {
+        height: 8px;
+    }
+}
